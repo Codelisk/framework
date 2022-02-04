@@ -11,7 +11,7 @@
 		<PackageReference Include="Shiny.Core" />
 		<PackageReference Include="Shiny.Extensions.Localization" Version="1.0.0.38" />
 		<PackageReference Include="DryIoc.Microsoft.DependencyInjection" Version="5.1.0" />
-		<PackageReference Include="Prism.DryIoc.Forms" Version="8.1.97" />
+		<PackageReference Include="Prism.DryIoc.Forms" Version="8.2.28-pre" />
 		<PackageReference Include="ReactiveUI" Version="17.1.17" />
 		<PackageReference Include="ReactiveUI.Fody" Version="17.1.17" />
 		<PackageReference Include="Xamarin.Essentials" Version="1.7.1" />
