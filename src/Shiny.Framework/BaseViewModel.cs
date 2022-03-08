@@ -19,12 +19,12 @@ namespace Shiny
     {
         protected BaseViewModel()
         {
-            ShinyHost
-                .Resolve<IConnectivity>()
-                .WhenInternetStatusChanged()
-                .ObserveOn(RxApp.MainThreadScheduler)
-                .ToPropertyEx(this, x => x.IsInternetAvailable)
-                .DisposeWith(DestroyWith);
+            //ShinyHost
+            //    .Resolve<IConnectivity>()
+            //    .WhenInternetStatusChanged()
+            //    .ObserveOn(RxApp.MainThreadScheduler)
+            //    .ToPropertyEx(this, x => x.IsInternetAvailable)
+            //    .DisposeWith(DestroyWith);
         }
 
 
@@ -44,7 +44,7 @@ namespace Shiny
                 this.RaiseAndSetIfChanged(ref _title, value);
             }
         }
-        public bool IsInternetAvailable { [ObservableAsProperty] get; }
+        //public bool IsInternetAvailable { [ObservableAsProperty] get; }
 
         private CompositeDisposable? deactivateWith;
         protected internal CompositeDisposable DeactivateWith => deactivateWith ??= new CompositeDisposable();
