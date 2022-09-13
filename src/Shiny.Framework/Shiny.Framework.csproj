@@ -8,16 +8,17 @@
 
 	<ItemGroup>
 		<PackageReference Include="Xamarin.Forms" />
-		<PackageReference Include="Shiny.Core" />
 		<PackageReference Include="Shiny.Extensions.Localization" />
 		<PackageReference Include="DryIoc.Microsoft.DependencyInjection" Version="5.1.0" />
 		<PackageReference Include="Prism.DryIoc.Forms" />
 		<PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
 		<PackageReference Include="ReactiveUI" />
-		<PackageReference Include="Xamarin.Essentials"  />
+		<PackageReference Include="Xamarin.Essentials" />
 	</ItemGroup>
 
 	<ItemGroup>
+		<ProjectReference Include="..\..\..\shiny\src\Shiny.Core\Shiny.Core.csproj" />
+		<ProjectReference Include="..\..\..\shiny\src\Shiny\Shiny.csproj" />
 		<ProjectReference Include="..\Shiny.Extensions.Dialogs\Shiny.Extensions.Dialogs.csproj" />
 	</ItemGroup>
 

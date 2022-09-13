@@ -6,13 +6,14 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Shiny.Core" />
 		<PackageReference Include="Shiny.Extensions.Localization" />
 		<PackageReference Include="Rg.Plugins.Popup" />
 		<PackageReference Include="XF.Material" />
 	</ItemGroup>
 
 	<ItemGroup>
+		<ProjectReference Include="..\..\..\shiny\src\Shiny.Core\Shiny.Core.csproj" />
+		<ProjectReference Include="..\..\..\shiny\src\Shiny\Shiny.csproj" />
 		<ProjectReference Include="..\Shiny.Extensions.Dialogs\Shiny.Extensions.Dialogs.csproj" />
 	</ItemGroup>
 

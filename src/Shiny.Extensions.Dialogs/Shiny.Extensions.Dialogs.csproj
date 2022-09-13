@@ -8,4 +8,9 @@
 	<ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">
 		<PackageReference Include="Microsoft.Bcl.AsyncInterfaces" Version="6.0.0" />
 	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\..\..\shiny\src\Shiny.Core\Shiny.Core.csproj" />
+	  <ProjectReference Include="..\..\..\shiny\src\Shiny\Shiny.csproj" />
+	</ItemGroup>
 </Project>
