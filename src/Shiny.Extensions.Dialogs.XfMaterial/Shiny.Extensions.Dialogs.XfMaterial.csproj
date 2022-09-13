@@ -8,8 +8,8 @@
 	<ItemGroup>
 		<PackageReference Include="Shiny.Core" />
 		<PackageReference Include="Shiny.Extensions.Localization" />
-		<PackageReference Include="Rg.Plugins.Popup" Version="2.1.0" />
-		<PackageReference Include="XF.Material" Version="1.8.0" />
+		<PackageReference Include="Rg.Plugins.Popup" />
+		<PackageReference Include="XF.Material" />
 	</ItemGroup>
 
 	<ItemGroup>
