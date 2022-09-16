@@ -17,7 +17,7 @@ namespace Shiny
 {
     public abstract class BaseViewModel : ReactiveObject, IDestructible, IValidationViewModel
     {
-        protected BaseViewModel()
+        protected BaseViewModel(bool useValidation = false)
         {
             this.isInternetAvaibale = ShinyHost
                 .Resolve<IConnectivity>()
@@ -28,11 +28,14 @@ namespace Shiny
 
             this.Localize = ShinyHost.Resolve<ILocalizationSource>(); // try to set the default section if there is one
 
-            var validationService = ShinyHost.Resolve<IValidationService>();
-            if (validationService != null)
+            if (useValidation)
             {
-                this.Validation = validationService.Bind(this);
-                this.DestroyWith.Add(this.Validation);
+                var validationService = ShinyHost.Resolve<IValidationService>();
+                if (validationService != null)
+                {
+                    this.Validation = validationService.Bind(this);
+                    this.DestroyWith.Add(this.Validation);
+                }
             }
         }
 
@@ -58,7 +61,7 @@ namespace Shiny
 
 
         CompositeDisposable? deactivateWith;
-        protected internal CompositeDisposable DeactivateWith => this.deactivateWith ??= new CompositeDisposable();
+        public CompositeDisposable DeactivateWith => this.deactivateWith ??= new CompositeDisposable();
 
 
         CompositeDisposable? destroyWith;

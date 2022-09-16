@@ -18,7 +18,6 @@ namespace Shiny.Impl
         {
             this.dispose = reactiveObj
                 .WhenAnyProperty()
-                .Where(x => x.PropertyName.Equals(nameof(IValidationViewModel.Validation)))
                 .SubOnMainThread(x =>
                 {
                     var error = service.ValidateProperty(reactiveObj, x.PropertyName)?.FirstOrDefault();
