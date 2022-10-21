@@ -19,12 +19,12 @@ namespace Shiny
     {
         protected BaseViewModel(bool useValidation = false)
         {
-            this.isInternetAvaibale = ShinyHost
-                .Resolve<IConnectivity>()
-                .WhenInternetStatusChanged()
-                .ObserveOn(RxApp.MainThreadScheduler)
-                .ToProperty(this, x => x.IsInternetAvailable)
-                .DisposeWith(this.DestroyWith);
+            //this.isInternetAvaibale = ShinyHost
+            //    .Resolve<IConnectivity>()
+            //    .WhenInternetStatusChanged()
+            //    .ObserveOn(RxApp.MainThreadScheduler)
+            //    .ToProperty(this, x => x.IsInternetAvailable)
+            //    .DisposeWith(this.DestroyWith);
 
             this.Localize = ShinyHost.Resolve<ILocalizationSource>(); // try to set the default section if there is one
 
