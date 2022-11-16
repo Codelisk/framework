@@ -10,7 +10,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\..\..\shiny\src\Shiny.Core\Shiny.Core.csproj" />
-	  <ProjectReference Include="..\..\..\shiny\src\Shiny\Shiny.csproj" />
+    <PackageReference Include="Shiny.Core" />
+    <ProjectReference Include="Shiny" />
 	</ItemGroup>
 </Project>
