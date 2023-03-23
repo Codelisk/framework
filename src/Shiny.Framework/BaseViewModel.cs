@@ -47,6 +47,12 @@ namespace Shiny
             set => this.RaiseAndSetIfChanged(ref this.isBusy, value);
         }
 
+        private string? busyText;
+        public string? BusyText
+        {
+            get => busyText;
+            set => this.RaiseAndSetIfChanged(ref busyText, value);
+        }
 
         string? title;
         public string? Title
