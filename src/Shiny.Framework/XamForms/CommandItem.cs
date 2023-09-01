@@ -1,32 +1,30 @@
-﻿using System.Windows.Input;
-using ReactiveUI;
+﻿using ReactiveUI;
+using System.Windows.Input;
 
 
 namespace Shiny.XamForms
 {
     public class CommandItem : ReactiveObject
     {
-        string? imageUri;
+        private string? imageUri;
         public string? ImageUri
         {
-            get => this.imageUri;
-            set => this.RaiseAndSetIfChanged(ref this.imageUri, value);
+            get => imageUri;
+            set => this.RaiseAndSetIfChanged(ref imageUri, value);
         }
 
-
-        string? text;
+        private string? text;
         public string? Text
         {
-            get => this.text;
-            set => this.RaiseAndSetIfChanged(ref this.text, value);
+            get => text;
+            set => this.RaiseAndSetIfChanged(ref text, value);
         }
 
-
-        string? detail;
+        private string? detail;
         public string? Detail
         {
-            get => this.detail;
-            set => this.RaiseAndSetIfChanged(ref this.detail, value);
+            get => detail;
+            set => this.RaiseAndSetIfChanged(ref detail, value);
         }
 
 

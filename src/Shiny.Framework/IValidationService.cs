@@ -40,7 +40,8 @@ namespace Shiny
         /// <param name="viewModel"></param>
         /// <returns></returns>
         public static IObservable<bool> WhenValid(this INotifyPropertyChanged viewModel)
-            => viewModel.WhenAnyProperty().Select(_ => {
+            => viewModel.WhenAnyProperty().Select(_ =>
+            {
                 var s = ShinyHost.Resolve<IValidationService>();
                 if (s == null)
                     throw new InvalidOperationException("Validation service is not registered");

@@ -1,16 +1,16 @@
-﻿using System;
+﻿using Shiny.Extensions.Localization;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Reactive.Linq;
-using Shiny.Extensions.Localization;
 
 
 namespace Shiny.Impl
 {
     public class DataAnnotationsValidationService : IValidationService
     {
-        readonly ILocalizationManager? localizationManager;
+        private readonly ILocalizationManager? localizationManager;
 
 
         public DataAnnotationsValidationService(ILocalizationManager? localizationManager = null)
@@ -31,7 +31,7 @@ namespace Shiny.Impl
                 );
                 return result;
             }
-            return !this.ValidateProperty(obj, propertyName).Any();
+            return !ValidateProperty(obj, propertyName).Any();
         }
 
 
@@ -57,7 +57,7 @@ namespace Shiny.Impl
                     if (!values.ContainsKey(member))
                         values.Add(member, new List<string>());
 
-                    var errMsg = this.GetErrorMessage(result);
+                    var errMsg = GetErrorMessage(result);
                     values[member].Add(errMsg);
                 }
             }
@@ -79,7 +79,7 @@ namespace Shiny.Impl
             {
                 if (result.MemberNames.Contains(propertyName))
                 {
-                    yield return this.GetErrorMessage(result);
+                    yield return GetErrorMessage(result);
                 }
             }
         }
@@ -89,11 +89,11 @@ namespace Shiny.Impl
         {
             if (result.ErrorMessage.StartsWith("localize:"))
             {
-                if (this.localizationManager == null)
+                if (localizationManager == null)
                     throw new ArgumentException("Localization has not been put into your startup");
 
                 var key = result.ErrorMessage.Replace("localize:", String.Empty);
-                return this.localizationManager[key] ?? key;
+                return localizationManager[key] ?? key;
             }
             return result.ErrorMessage!;
         }

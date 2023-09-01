@@ -12,8 +12,7 @@ namespace Shiny
     {
         public static bool FirstRun { get; private set; } = true;
 
-
-        static void AssetFrameworkStartup()
+        private static void AssetFrameworkStartup()
         {
             if (FrameworkStartup.Current == null)
                 throw new InvalidOperationException("FrameworkStartup did not run.  Ensure you have initialized Shiny and that your startup inherits from Shiny.FrameworkStartup");
@@ -25,7 +24,7 @@ namespace Shiny
         protected override async void OnInitialized()
         {
             AssetFrameworkStartup();
-            await FrameworkStartup.Current!.RunApp(this.NavigationService);
+            await FrameworkStartup.Current!.RunApp(NavigationService);
         }
 
 

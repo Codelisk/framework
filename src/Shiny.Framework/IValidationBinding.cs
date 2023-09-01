@@ -9,6 +9,6 @@ namespace Shiny
     public interface IValidationBinding : IReactiveObject, IDisposable
     {
         IReadOnlyDictionary<string, string> Errors { get; }
-        IReadOnlyDictionary<string, bool> Touched { get;}
+        IReadOnlyDictionary<string, bool> Touched { get; }
     }
 }
