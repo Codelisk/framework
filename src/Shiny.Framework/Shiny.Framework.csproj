@@ -7,13 +7,14 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Xamarin.Forms" />
-		<PackageReference Include="Shiny.Extensions.Localization" />
-		<PackageReference Include="DryIoc.Microsoft.DependencyInjection" Version="5.1.0" />
-		<PackageReference Include="Prism.DryIoc.Forms" />
-		<PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
-		<PackageReference Include="ReactiveUI" />
-		<PackageReference Include="Xamarin.Essentials" />
+    <PackageReference Include="Orderlyze.BuildTools" Version="1.0.17" />
+		<PackageReference Include="Xamarin.Forms" PrivateAssets="all" />
+		<PackageReference Include="Shiny.Extensions.Localization" PrivateAssets="all" />
+		<PackageReference Include="DryIoc.Microsoft.DependencyInjection" Version="5.1.0" PrivateAssets="all" />
+		<PackageReference Include="Prism.DryIoc.Forms" PrivateAssets="all" />
+		<PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" PrivateAssets="all" />
+		<PackageReference Include="ReactiveUI" PrivateAssets="all" />
+		<PackageReference Include="Xamarin.Essentials" PrivateAssets="all" />
 	</ItemGroup>
 
 	<ItemGroup>

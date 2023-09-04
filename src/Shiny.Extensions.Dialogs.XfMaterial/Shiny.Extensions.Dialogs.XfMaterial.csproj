@@ -6,13 +6,14 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Shiny.Extensions.Localization" />
-		<PackageReference Include="Rg.Plugins.Popup" />
-		<PackageReference Include="XF.Material" />
+    <PackageReference Include="Orderlyze.BuildTools" Version="1.0.17" />
+		<PackageReference Include="Shiny.Extensions.Localization" PrivateAssets="all" />
+		<PackageReference Include="Rg.Plugins.Popup" PrivateAssets="all" />
+		<PackageReference Include="XF.Material" PrivateAssets="all" />
 	</ItemGroup>
 
 	<ItemGroup>
-    <PackageReference Include="Shiny.Core" />
-		<ProjectReference Include="..\Shiny.Extensions.Dialogs\Shiny.Extensions.Dialogs.csproj" />
+    <PackageReference Include="Shiny.Core" PrivateAssets="all" />
+		<ProjectReference Include="..\Shiny.Extensions.Dialogs\Shiny.Extensions.Dialogs.csproj" PrivateAssets="all" />
 	</ItemGroup>
 </Project>
