@@ -7,7 +7,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-    <PackageReference Include="Orderlyze.BuildTools" Version="1.0.17" />
+    <PackageReference Include="Orderlyze.BuildTools" Version="1.0.19" />
 		<PackageReference Include="Xamarin.Forms" PrivateAssets="all" />
 		<PackageReference Include="Shiny.Extensions.Localization"  />
 		<PackageReference Include="DryIoc.Microsoft.DependencyInjection" Version="5.1.0" PrivateAssets="all" />
