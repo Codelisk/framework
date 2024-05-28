@@ -1,7 +1,7 @@
 using System;
 using System.Globalization;
-using Xamarin.Forms;
-
+using Microsoft.Maui;
+using Microsoft.Maui.Controls;
 
 namespace Shiny.XamForms
 {
@@ -15,8 +15,12 @@ namespace Shiny.XamForms
             return default(DateTime);
         }
 
-
-        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        public object ConvertBack(
+            object value,
+            Type targetType,
+            object parameter,
+            CultureInfo culture
+        )
         {
             if (value is DateTime dt)
                 return (DateTimeOffset)dt;

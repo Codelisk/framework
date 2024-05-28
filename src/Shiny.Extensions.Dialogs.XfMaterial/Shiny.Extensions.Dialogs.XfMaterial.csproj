@@ -1,18 +1,16 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
-	<PropertyGroup>
-		<TargetFrameworks>netstandard2.1</TargetFrameworks>
-		<Description>XF Material dialog implementations for Shiny mobile applications</Description>
-	</PropertyGroup>
-
-	<ItemGroup>
-		<PackageReference Include="Shiny.Extensions.Localization" />
-		<PackageReference Include="Rg.Plugins.Popup" />
-		<PackageReference Include="XF.Material" />
-	</ItemGroup>
-
-	<ItemGroup>
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.1</TargetFrameworks>
+    <Description>XF Material dialog implementations for Shiny mobile applications</Description>
+    <TargetFramework>net8.0</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Shiny.Extensions.Localization" />
+    <PackageReference Include="Rg.Plugins.Popup" />
+    <PackageReference Include="XF.Material" />
+  </ItemGroup>
+  <ItemGroup>
     <PackageReference Include="Shiny.Core" />
-		<ProjectReference Include="..\Shiny.Extensions.Dialogs\Shiny.Extensions.Dialogs.csproj" />
-	</ItemGroup>
+    <ProjectReference Include="..\Shiny.Extensions.Dialogs\Shiny.Extensions.Dialogs.csproj" />
+  </ItemGroup>
 </Project>

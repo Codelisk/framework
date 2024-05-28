@@ -1,13 +1,18 @@
-﻿using Shiny.Extensions.Dialogs;
-using System;
+﻿using System;
 using System.Threading.Tasks;
-
+using Microsoft.Maui.ApplicationModel;
+using Shiny.Extensions.Dialogs;
 
 namespace Shiny
 {
     public static class DialogExtensions
     {
-        public static async Task<AccessState> OpenAppSettingsIf(this IDialogs dialogs, Func<Task<AccessState>> accessRequest, string deniedMessage, string restrictedMessage)
+        public static async Task<AccessState> OpenAppSettingsIf(
+            this IDialogs dialogs,
+            Func<Task<AccessState>> accessRequest,
+            string deniedMessage,
+            string restrictedMessage
+        )
         {
             var result = await accessRequest.Invoke();
 
@@ -25,16 +30,16 @@ namespace Shiny
             return result;
         }
 
-
-        public static async Task SnackbarToOpenAppSettings(this IDialogs dialogs, string message, string actionText = "Open", int durationMillis = 3000)
+        public static async Task SnackbarToOpenAppSettings(
+            this IDialogs dialogs,
+            string message,
+            string actionText = "Open",
+            int durationMillis = 3000
+        )
         {
-            var result = await dialogs.Snackbar(
-                message,
-                durationMillis,
-                actionText
-            );
+            var result = await dialogs.Snackbar(message, durationMillis, actionText);
             if (result)
-                Xamarin.Essentials.AppInfo.ShowSettingsUI();
+                Microsoft.Maui.ApplicationModel.AppInfo.ShowSettingsUI();
         }
     }
 }

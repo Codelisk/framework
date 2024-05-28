@@ -1,5 +1,5 @@
-﻿using Xamarin.Forms;
-using Xamarin.Forms.Internals;
+﻿using Microsoft.Maui;
+using Microsoft.Maui.Controls;
 
 [assembly: Preserve(AllMembers = true)]
 

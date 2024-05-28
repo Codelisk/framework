@@ -4,13 +4,13 @@ using DryIoc.Microsoft.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Logging;
+using Microsoft.Maui;
+using Microsoft.Maui.Controls;
 using Prism.DryIoc;
 using Prism.Ioc;
 using Prism.Navigation;
 using Shiny.Extensions.Dialogs;
 using Shiny.Impl;
-using Xamarin.Forms;
-
 
 namespace Shiny
 {
@@ -20,7 +20,6 @@ namespace Shiny
 
         protected IPlatform? Platform { get; private set; }
         ILoggingBuilder? builder;
-
 
         /// <summary>
         /// This is when the application is ready to run - use the naviagator to navigate to the initial page
@@ -43,10 +42,8 @@ namespace Shiny
         /// <param name="services"></param>
         protected abstract void Configure(ILoggingBuilder builder, IServiceCollection services);
 
-
-        public override void ConfigureLogging(ILoggingBuilder builder, IPlatform platform)
-            => this.builder = builder;
-
+        public override void ConfigureLogging(ILoggingBuilder builder, IPlatform platform) =>
+            this.builder = builder;
 
         public override void ConfigureServices(IServiceCollection services, IPlatform platform)
         {
@@ -56,7 +53,6 @@ namespace Shiny
             services.TryAddSingleton<IDialogs, NativeDialogs>();
         }
 
-
         public override IServiceProvider CreateServiceProvider(IServiceCollection services)
         {
             ContainerLocator.SetContainerExtension(() => new DryIocContainerExtension());
@@ -64,7 +60,6 @@ namespace Shiny
             DryIocAdapter.Populate(container, services);
             return container.GetServiceProvider();
         }
-
 
         ///// <summary>
         ///// Call this if your app uses XAML and you don't have it calling InitializeComponent internally
